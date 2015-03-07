@@ -37,5 +37,9 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+# Gem devise
 gem "devise"
+# Bootstrap Framework
+gem 'bootstrap-sass', '3.3.3'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
