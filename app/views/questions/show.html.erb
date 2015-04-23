@@ -24,7 +24,9 @@
 <div>
   <p><%= answer.description %></p>
   &raquo Answered by <%= answer.user.email %> at <%= time_ago_in_words answer.created_at %> ago |
-  Vote:<%= answer.vote %>
+  Vote:<%= answer.vote %> &raquo
+  <%= link_to "Delete", [@question, answer], method: :delete, data: { confirm: 'Are you sure?' } %> &raquo
+  
 </div>
 <% end %>
 

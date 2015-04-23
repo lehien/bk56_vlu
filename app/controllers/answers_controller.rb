@@ -50,10 +50,6 @@ class AnswersController < ApplicationController
     respond_with(@answer)
   end
 
-  def get_name_user
-    @user = User.find_by(id: params[:@answer.user_id])
-    return @user.email
-  end
   private
     def set_answer
       @answer = Answer.find(params[:id])
