@@ -23,21 +23,22 @@
   <% end %>
     <hr>
     <% @user.questions.each do |question| %>
-    <div class="col-md-12"><%= link_to question.title, question%>
+    <div class="col-md-12 panel-footer"><%= link_to question.title, question%>
     </div>
     <% end %>
-    <!-- <%= will_paginate @user.questions.paginate(page: params[:page]) %> -->
+    <!--<%= will_paginate @user.questions.paginate(page: params[:page]) %> -->
     </div>
   <% if user_signed_in? and current_user.id == @user.id %>
   <div class="col-md-6">Your answer list
   <% else %>
-  <div class="col-md-6"><%= @user.email[/[^@]+/]%>'s answer list
+  <div
+  class="col-md-6"><%= @user.email[/[^@]+/]%>'s answer list
   <% end %>
     <hr>
     <% @user.answers.each do |answer| %>
-    <div class="col-md-12"><%= link_to answer.question_id, answer.question %>
+    <div class="col-md-12 panel-footer"><%= link_to answer.question_id, answer.question %>
     </div>
     <% end %>
-    <!-- <%= will_paginate @user.answers.paginate(page: params[:page]) %> -->
+     <%= will_paginate @user.answers.paginate(page: params[:page]) %> 
   </div>
 </div>
