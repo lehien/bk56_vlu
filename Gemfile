@@ -43,6 +43,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem "devise"
+gem 'gravtastic'
 
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"

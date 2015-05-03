@@ -1,6 +1,6 @@
 <% provide(:title, "Question List") %>
 <div>
-  <h3>All Questions</h3>
+  <h4>All Questions</h4>
   <% if user_signed_in? %>
     <%= link_to 'Ask Question', new_question_path, class: "btn btn-primary"%>
   <% end %>
@@ -10,7 +10,8 @@
       <span class="title"><%= link_to question.title, question %></span>
       <span class="content"><%= question.content %></span>
       <span class="timestamp">
-        Asked <%= time_ago_in_words(question.created_at) %> ago by <%= question.user.email %>
+        Asked <%= time_ago_in_words(question.created_at) %> ago by 
+        <%= image_tag question.user.gravatar_url , width: 15 %><%= link_to question.user.email, question.user %>
       </span>
       <span class="timestamp"><span class="glyphicon glyphicon-eye-open"></span> <%= question.views %></span>
     </li>

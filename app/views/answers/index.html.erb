@@ -16,9 +16,9 @@
         <td><%= answer.question %></td>
         <td><%= answer.title %></td>
         <td><%= answer.description %></td>
-        <td><%= link_to 'Show', answer %></td>
-        <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
-        <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', question_answer_path(answer.question, answer) %></td>
+        <td><%= link_to 'Edit', edit_question_answer_path(answer.question, answer) %></td>
+        <td><%= link_to 'Delete', question_answer_path(answer.question, answer), class: "", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Answer', new_answer_path %>
+<%= link_to 'New Answer', new_question_answer_path %>
