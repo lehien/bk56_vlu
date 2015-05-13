@@ -1,0 +1,4 @@
+- @links.each do |link|
+  = link_to "upvote", like_link_path(link), method: :put
+  = link_to "downvote", dislike_link_path(link), method: :put
+  = link.score
